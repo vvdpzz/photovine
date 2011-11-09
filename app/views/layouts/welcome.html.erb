@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photovine</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="container-fluid">
+        <a class="brand" href="#">Photovine</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div id="page-outer">
+      <div id="page-container">
+        <div class="row">
+          <div class="span8">
+            <%= render "/devise/registrations/new" %>
+          </div>
+          <div class="span8">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" charset="utf-8">
+    $(function() {
+      $("#user_email").keyup(function(){
+        $("#user_username").val($("#user_email").val().split('@')[0]);
+      });
+    });
+  </script>
+</body>
+</html>

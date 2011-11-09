@@ -1,0 +1,86 @@
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -o-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin box-shadow($color) {
+  box-shadow: 0px 3px 12px $color;
+  -o-box-shadow: 0px 3px 12px $color;
+  -moz-box-shadow: 0px 3px 12px $color;
+  -webkit-box-shadow: 0px 3px 12px $color;
+}
+.uploadButton{
+  float:right;
+  padding:20px 0;
+}
+.fluploader_wrapper{
+  display: inline;
+  position: relative;
+  margin:0;
+  padding:0;
+  line-height:1;
+}
+.fluploader_swfdiv{
+  top: 0px;
+  left: 0px;
+  margin:0;
+  padding:0;
+  line-height:1;
+  position: absolute;
+}
+.uiButton{background:#eee url(/assets/fbutton.png) repeat 0 0;border:1px solid #999;border-bottom-color:#888;box-shadow:0 1px 0 rgba(0, 0, 0, .1);-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .1);cursor:pointer;display:-moz-inline-box;display:inline-block;font-size: 12px;font-weight:bold;line-height:normal !important;padding:2px 6px;text-align:center;text-decoration:none;vertical-align:top;white-space:nowrap}
+.uiButton:hover{text-decoration:none}
+.uiButton:active{background:#ddd;border-bottom-color:#999;box-shadow:0 1px 0 rgba(0, 0, 0, .05);-webkit-box-shadow:0 1px 0 rgba(0, 0, 0, .05)}
+.uiButton .select-photo{background:none;border:0;color:#333;cursor:pointer;display:-moz-inline-box;display:inline-block;font-family:'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;font-size: 12px;font-weight:bold;margin:0;outline:none;padding:1px 0 2px;white-space:nowrap}
+.vine{
+  float:left;
+  margin:15px;
+}
+.uiMediaThumb {
+  background: white;
+  border: 1px solid #CCC;
+  display: inline-block;
+  outline: none;
+  padding: 4px;
+  position: relative;
+  vertical-align: bottom;
+}
+.uiMediaThumb i {
+  background-color: #EEE;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  display: block;
+}
+.uiMediaThumbWrap {
+  background: white;
+  border: 1px solid #CCC;
+  left: 4px;
+  padding: 4px;
+  position: absolute;
+  top: 4px;
+}
+.uiMediaThumbAlb {
+  margin-bottom: 4px;
+  margin-right: 4px;
+}
+.uiMediaThumbAlbHuge, .uiMediaThumbHuge .uiMediaThumbWrap i {
+  height: 118px;
+  width: 176px;
+}
+.photoDetails {
+  .photoText {
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+}
+.pvs {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.photo{
+  text-align:center;
+  padding:20px 0;
+  border-bottom: 1px dashed #BBB;
+}

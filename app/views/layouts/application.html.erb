@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photovine</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="container-fluid">
+        <a class="brand" href="#">Photovine</a>
+        <ul class="nav">
+          <li id="vines-page" class="active"><a href="#!/index">Vines</a></li>
+        </ul>
+        <ul class="nav secondary-nav">
+          <li id="new-vine-page"><a href="#!/new">Start a new Vine</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div id="page-outer">
+      <div id="page-container">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript" charset="utf-8">
+<% key = Rails.application.config.session_options[:key] %>
+var uploadify_script_data = {};
+var csrf_param = $('meta[name=csrf-param]').attr('content');
+var csrf_token = $('meta[name=csrf-token]').attr('content');
+uploadify_script_data[csrf_param] = encodeURI(encodeURIComponent(csrf_token));
+uploadify_script_data['<%= key %>'] = '<%= cookies[key] %>';
+</script>
+</body>
+</html>
