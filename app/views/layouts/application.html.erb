@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Photovine</title>
+  <title>图藤</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,21 +9,21 @@
 <body>
   <div class="topbar">
     <div class="topbar-inner">
-      <div class="container-fluid">
+      <div class="container">
         <a class="brand" href="#">Photovine</a>
         <ul class="nav">
-          <li id="vines-page" class="active"><a href="#!/index">Vines</a></li>
+          <li id="vines-page" class="active"><a href="#!/index">图藤</a></li>
         </ul>
         <ul class="nav secondary-nav">
-          <li id="new-vine-page"><a href="#!/new">Start a new Vine</a></li>
+          <li id="new-vine-page"><a href="#!/new">新建</a></li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="container-fluid">
+  <div class="container">
     <div id="page-outer">
       <div id="page-container">
-        <%= yield %>
+        <div id="vines"></div>
       </div>
     </div>
   </div>
@@ -34,6 +34,15 @@ var csrf_param = $('meta[name=csrf-param]').attr('content');
 var csrf_token = $('meta[name=csrf-token]').attr('content');
 uploadify_script_data[csrf_param] = encodeURI(encodeURIComponent(csrf_token));
 uploadify_script_data['<%= key %>'] = '<%= cookies[key] %>';
+$.ajax({
+  url: '/vines.json',
+  type: 'GET',
+  dataType: 'json',
+  success: function(data, textStatus, xhr) {
+    new Photovine.Routers.router({vines: data});
+    Backbone.history.start();
+  }
+});
 </script>
 </body>
 </html>

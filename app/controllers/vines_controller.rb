@@ -1,11 +1,8 @@
 class VinesController < ApplicationController
+  respond_to :html, :json
+  
   def index
-    @vines = Vine.all
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @vines }
-    end
+    respond_with vines
   end
   
   def create
@@ -28,7 +25,13 @@ class VinesController < ApplicationController
   
   def photos
     vine = Vine.find params[:id]
-    photos = vine.photos.collect{|photo| {username: photo.username, url: photo.image.url(:b)}}
+    photos = vine.photos.collect{|photo| {username: photo.username, url: photo.image.url(:b), id: photo.id}}
     render json: photos, status: :ok
   end
+  
+  protected
+  
+    def vines
+      @vines ||= Vine.all
+    end
 end

@@ -12,8 +12,12 @@ gem 'redis', :require => ["redis/connection/hiredis", "redis"]
 
 gem "rails-backbone"
 
+gem 'mime-types', :require => 'mime/types'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'rmagick'
+
+gem 'rabl'
+gem 'yajl-ruby'
 
 group :linux do
   gem 'execjs'

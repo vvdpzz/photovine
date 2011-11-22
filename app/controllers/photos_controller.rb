@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   def create
+    params[:Filedata].content_type = MIME::Types.type_for(params[:Filedata].original_filename).to_s
     photo = current_user.photos.build(
       vine_id: params[:vine_id],
       username: current_user.username,

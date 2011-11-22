@@ -43,4 +43,8 @@ class Photovine.Views.Vines.ShowView extends Backbone.View
         response = eval("(" + response + ")")
         photo = new Photovine.Models.Photo(response)
         that.photos.add(photo)
-        vine.set({cover: response.thumb})
+        vine.set({photos_count: vine.get('photos_count') + 1})
+        photos = vine.get('photos')
+        photos.unshift({id:response.id, url:response.url})
+        photos.pop() if photos.length > 5
+        vine.set({photos: photos})

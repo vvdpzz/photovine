@@ -15,13 +15,13 @@ class Photovine.Routers.router extends Backbone.Router
     $("#vines").html(@view.render().el)
 
   index: ->
-    document.title = "Photovine"
+    document.title = "图藤"
     @view = new Photovine.Views.Vines.IndexView(vines: @vines)
     $("#vines").html(@view.render().el)
 
   show: (id) ->
     vine = @vines.get(id)
-    document.title = "Photovine :: #{vine.get('name')}"
+    document.title = "图藤 :: #{vine.get('name')}"
     @view = new Photovine.Views.Vines.ShowView(model: vine)
     $("#vines").html(@view.render().el)
     @view.initUploadify(id, vine)

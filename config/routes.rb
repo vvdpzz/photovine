@@ -6,5 +6,5 @@ Photovine::Application.routes.draw do
     end
   end
   resources :photos
-  root :to => 'vines#index'
+  root :to => 'home#index'
 end

@@ -13,7 +13,7 @@ class Photovine.Views.Vines.IndexView extends Backbone.View
   
   addOne: (vine) ->
     view = new Photovine.Views.Vines.VineView({model : vine})
-    @$(@el).append(view.render().el)
+    @$(@el).prepend(view.render().el)
        
   render: ->
     $("li").removeClass("active")

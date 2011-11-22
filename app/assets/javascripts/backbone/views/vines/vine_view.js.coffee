@@ -7,7 +7,7 @@ class Photovine.Views.Vines.VineView extends Backbone.View
     "click .destroy" : "destroy"
       
   tagName: "div"
-  className: "vine"
+  className: "vine clearfix"
   
   destroy: () ->
     @model.destroy()

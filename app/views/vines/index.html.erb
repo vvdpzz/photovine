@@ -1,7 +1,0 @@
-<div id="vines"></div>
-<script type="text/javascript">
-  $(function() {
-    new Photovine.Routers.router({vines: <%= @vines.to_json.html_safe -%>});
-    Backbone.history.start();
-  });
-</script>
