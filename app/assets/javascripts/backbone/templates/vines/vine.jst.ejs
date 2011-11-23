@@ -1,8 +1,10 @@
 <h5 class="vine-name"><a href="#!/<%= id %>"><%= name %></a><span><%= photos_count %> 张照片</span></h5>
-<% _.each(photos, function(photo){ %>
-  <a href="#!/<%= id %>">
-  <div class="thumb clearfix">
-    <i style="background-image: url(<%= photo.url %>)"></i>
-  </div>
-  </a>
-<% });%>
+<div class="thumbs clearfix">
+  <% _.each(photos, function(photo){ %>
+    <a href="#!/<%= id %>">
+    <div class="thumb">
+      <i style="background-image: url(<%= photo.url %>)"></i>
+    </div>
+    </a>
+  <% });%>
+</div>

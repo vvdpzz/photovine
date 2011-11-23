@@ -87,7 +87,15 @@
 .vine{
   padding:16px 0 15px;
 }
-
+.thumbs{
+  a{
+    float:left;
+    margin-left: 10px;
+    &:first-child{
+      margin-left:0;
+    };
+  }
+}
 i {
   height: 118px;
   width: 176px;
@@ -106,10 +114,8 @@ i {
   clear: both;
 }
 .thumb{
-  float:left;
   padding:4px;
   border:1px solid #ccc;
-  margin:0 4px;
 }
 .vine-name{
   padding-left:24px;
