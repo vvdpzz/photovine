@@ -6,7 +6,7 @@ class VinesController < ApplicationController
   end
   
   def create
-    vine = current_user.vines.build(params[:vine])
+    vine = current_user.vines.build(name: params[:vine][:name])
     if vine.save
       render json: vine, status: :ok
     else
